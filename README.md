@@ -1,6 +1,8 @@
 # [Myo-OSC](http://samy.pl/myo-osc/)
 
-Thalmic Myo gesture control armband communicating over OSC for Windows and Mac OS X! -samyk
+OSC bridge for Thalmic Myo gesture control armband for Windows and Mac OS X 10.8+.
+
+By [Samy Kamkar](http://samy.pl)
 
 Myo-OSC is a C++ application designed to take hand gestures, accelerometer, gyroscope and magnetometer data from the [Thalmic Labs Myo](https://www.thalmic.com/en/myo/) armband and output it over OSC. This allows incredible control of virtually any device or application just by waving or flailing your arm or hand around like a madman.
 
