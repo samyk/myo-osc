@@ -91,7 +91,7 @@ public:
                         1.0f - 2.0f * (quat.y() * quat.y() + quat.z() * quat.z()));
 
         osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
-		p << osc::BeginMessage("/myo/orientation")
+				p << osc::BeginMessage("/myo/orientation")
         << MAC
         << quat.x() << quat.y() << quat.z() << quat.w() << roll << pitch << yaw << osc::EndMessage;
 		transmitSocket->Send(p.Data(), p.Size());
@@ -195,17 +195,31 @@ int main(int argc, char** argv)
     // We catch any exceptions that might occur below -- see the catch statement for more details.
     try
     {
-        if (argc != 3)
+        if (argc != 3 && argc != 2)
         {
-            std::cout << "\nusage: " << argv[0] << " <IP address> <port>\n\n" <<
+            std::cout << "\nusage: " << argv[0] << " [IP address] <port>\n\n" <<
 			"Myo-OSC sends OSC output over UDP from the input of a Thalmic Myo armband.\n" <<
+			"IP address defaults to 127.0.0.1/localhost\n\n" <<
 			"by Samy Kamkar -- http://samy.pl -- code@samy.pl\n";
             exit(0);
         }
-        
-        std::cout << "Sending Myo OSC to " << argv[1] << ":" << argv[2] << "\n";
 
-        transmitSocket = new UdpTransmitSocket(IpEndpointName(argv[1], atoi(argv[2])));
+				if (argc == 2)
+				{
+					std::cout << "Sending Myo OSC to 127.0.0.1:" << argv[1] << "\n";
+					transmitSocket = new UdpTransmitSocket(IpEndpointName("127.0.0.1", atoi(argv[1])));
+				}
+				else if (argc == 3)
+				{
+					std::cout << "Sending Myo OSC to " << argv[1] << ":" << argv[2] << "\n";
+			    transmitSocket = new UdpTransmitSocket(IpEndpointName(argv[1], atoi(argv[2])));
+				}
+				else
+				{
+					std::cout << "well this awkward -- weird argc: " << argc << "\n";
+					exit(0);
+				}
+
 
     // First, we create a Hub with our application identifier. Be sure not to use the com.example namespace when
     // publishing your application. The Hub provides access to one or more Myos.

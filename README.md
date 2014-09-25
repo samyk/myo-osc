@@ -31,7 +31,7 @@ You can acquire Myo-OSC from github (redirects to latest branch): <http://samy.p
 ------
 
 ## Usage
-$ Myo-OSC.exe ip.address osc.port
+$ ./myo-osc [IP address (default: 127.0.0.1)] <OSC port (eg 7777)>
 
 This will output the following OSC data
 
@@ -44,6 +44,8 @@ This will output the following OSC data
 
 /myo/orientation s MAC f X_quaternion f Y_quaternion f Z_quaternion f W_quaternion f roll f pitch f yaw
 ```
+
+*Note:* Thalmic removed the unique MAC address in one of the alpha/beta versions of the SDK, so now the MAC will always return 00:00:00:00:00:00. Hoping this changes in a future version, or perhaps I can access the BLE stack directly and grab the MAC as it's publicly available.
 
 Examples:
 
