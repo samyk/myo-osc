@@ -16,6 +16,7 @@
 		2E43743D19885228006D0623 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E43743919885228006D0623 /* OscReceivedElements.cpp */; };
 		2E43743E19885228006D0623 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E43743A19885228006D0623 /* OscTypes.cpp */; };
 		4D04ADE519266DE6006E1C84 /* myo-osc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D04ADE419266DE6006E1C84 /* myo-osc.cpp */; };
+		54B3C77019E5C6F4009B3EEC /* myo.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 2E05E85219D3621D00953A39 /* myo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				54B3C77019E5C6F4009B3EEC /* myo.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,7 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2E05E85219D3621D00953A39 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = myo.framework; path = ../../myo.framework; sourceTree = "<group>"; };
+		2E05E85219D3621D00953A39 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = myo.framework; path = ../myo.framework; sourceTree = "<group>"; };
 		2E43743119885215006D0623 /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IpEndpointName.cpp; path = ip/IpEndpointName.cpp; sourceTree = SOURCE_ROOT; };
 		2E43743219885215006D0623 /* NetworkingUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NetworkingUtils.cpp; path = ip/posix/NetworkingUtils.cpp; sourceTree = SOURCE_ROOT; };
 		2E43743319885215006D0623 /* UdpSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UdpSocket.cpp; path = ip/posix/UdpSocket.cpp; sourceTree = SOURCE_ROOT; };
@@ -249,10 +251,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					$SOURCE_ROOT/../,
-					"/Users/samy/Code/myo/myo-sdk-mac-beta4-10_8",
+					$SOURCE_ROOT/,
 				);
-				LD_RUNPATH_SEARCH_PATHS = "$(SRCROOT) @loader_path $(SRCROOT)/..";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -262,10 +263,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					$SOURCE_ROOT/../,
-					"/Users/samy/Code/myo/myo-sdk-mac-beta4-10_8",
+					$SOURCE_ROOT/,
 				);
-				LD_RUNPATH_SEARCH_PATHS = "$(SRCROOT) @loader_path $(SRCROOT)/..";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
