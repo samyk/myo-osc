@@ -1,7 +1,6 @@
 // Copyright (C) 2013-2014 Thalmic Labs Inc.
 // Distributed under the Myo SDK license agreement. See LICENSE.txt for details.
-#ifndef MYO_CXX_QUATERNION_HPP
-#define MYO_CXX_QUATERNION_HPP
+#pragma once
 
 #include <cmath>
 
@@ -157,5 +156,3 @@ Quaternion<T> rotate(const Vector3<T>& from, const Vector3<T>& to)
 }
 
 } // namespace myo
-
-#endif // MYO_CXX_QUATERNION_HPP

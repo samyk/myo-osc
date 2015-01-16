@@ -195,7 +195,7 @@ int main(int argc, char** argv)
     // We catch any exceptions that might occur below -- see the catch statement for more details.
     try
     {
-        if (argc != 3 && argc != 2)
+        if (argc != 3 && argc != 2 && argc != 1)
         {
             std::cout << "\nusage: " << argv[0] << " [IP address] <port>\n\n" <<
 			"Myo-OSC sends OSC output over UDP from the input of a Thalmic Myo armband.\n" <<
@@ -204,7 +204,13 @@ int main(int argc, char** argv)
             exit(0);
         }
 
-				if (argc == 2)
+				if (argc == 1)
+				{
+					int port = 7777;
+					std::cout << "Sending Myo OSC to 127.0.0.1:7777\n";
+					transmitSocket = new UdpTransmitSocket(IpEndpointName("127.0.0.1", port));
+				}
+				else if (argc == 2)
 				{
 					std::cout << "Sending Myo OSC to 127.0.0.1:" << argv[1] << "\n";
 					transmitSocket = new UdpTransmitSocket(IpEndpointName("127.0.0.1", atoi(argv[1])));

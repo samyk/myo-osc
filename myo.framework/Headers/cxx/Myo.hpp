@@ -1,7 +1,6 @@
 // Copyright (C) 2013-2014 Thalmic Labs Inc.
 // Distributed under the Myo SDK license agreement. See LICENSE.txt for details.
-#ifndef MYO_CXX_MYO_HPP
-#define MYO_CXX_MYO_HPP
+#pragma once
 
 #include <myo/libmyo.h>
 
@@ -27,6 +26,34 @@ public:
     /// @see DeviceListener::onRssi()
     void requestRssi() const;
 
+    /// Unlock types supported by Myo.
+    enum UnlockType {
+        unlockTimed = libmyo_unlock_timed,
+        unlockHold  = libmyo_unlock_hold
+    };
+
+    /// Unlock the Myo.
+    /// Myo will remain unlocked for a short amount of time, after which it will automatically lock again.
+    /// If Myo was locked, an onUnlock event will be generated.
+    void unlock(UnlockType type);
+
+    /// Force the Myo to lock immediately.
+    /// If Myo was unlocked, an onLock event will be generated.
+    void lock();
+
+    /// Notify the Myo that a user action was recognized.
+    /// Will cause Myo to vibrate.
+    void notifyUserAction();
+
+    /// Valid EMG streaming modes for a Myo.
+    enum StreamEmgType {
+        streamEmgDisabled = libmyo_stream_emg_disabled,
+        streamEmgEnabled = libmyo_stream_emg_enabled
+    };
+
+    /// Sets the EMG streaming mode for a Myo.
+    void setStreamEmg(StreamEmgType type);
+
     /// @cond MYO_INTERNALS
 
     /// Return the internal libmyo object corresponding to this device.
@@ -50,5 +77,3 @@ private:
 } // namespace myo
 
 #include "impl/Myo_impl.hpp"
-
-#endif // MYO_CXX_MYO_HPP

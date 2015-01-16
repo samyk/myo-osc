@@ -1,7 +1,6 @@
 // Copyright (C) 2013-2014 Thalmic Labs Inc.
 // Distributed under the Myo SDK license agreement. See LICENSE.txt for details.
-#ifndef MYO_CXX_HUB_HPP
-#define MYO_CXX_HUB_HPP
+#pragma once
 
 #include <vector>
 
@@ -44,6 +43,15 @@ public:
     /// Remove a previously registered listener.
     void removeListener(DeviceListener* listener);
 
+    /// Locking policies supported by Myo.
+    enum LockingPolicy {
+        lockingPolicyNone     = libmyo_locking_policy_none,
+        lockingPolicyStandard = libmyo_locking_policy_standard
+    };
+
+    /// Set the locking policy for Myos connected to the Hub.
+    void setLockingPolicy(LockingPolicy lockingPolicy);
+
     /// Run the event loop for the specified duration (in milliseconds).
     void run(unsigned int duration_ms);
 
@@ -75,9 +83,9 @@ private:
 };
 
 /// @example hello-myo.cpp
+/// @example multiple-myos.cpp
+/// @example emg-data-sample.cpp
 
 } // namespace myo
 
 #include "impl/Hub_impl.hpp"
-
-#endif // MYO_CXX_HUB_HPP

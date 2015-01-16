@@ -77,10 +77,8 @@ std::string Pose::toString() const
         return "waveOut";
     case Pose::fingersSpread:
         return "fingersSpread";
-    case Pose::reserved1:
-        return "reserved1";
-    case Pose::thumbToPinky:
-        return "thumbToPinky";
+    case Pose::doubleTap:
+        return "doubleTap";
     case Pose::unknown:
         return "unknown";
     }

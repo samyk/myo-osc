@@ -11,37 +11,29 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/cxx/.tags</key>
-		<data>
-		mggd0MS88mGCPzBNM1nE60n6Wo8=
-		</data>
-		<key>Headers/cxx/.tags_sorted_by_file</key>
-		<data>
-		dtDEQzFjavv60Is7q3eZkY6wCW0=
-		</data>
 		<key>Headers/cxx/DeviceListener.hpp</key>
 		<data>
-		1rA3Oalqd7XnG27bX68OP4o+RXQ=
+		ZnBvykur3qMScU+3iybCSoLvcUg=
 		</data>
 		<key>Headers/cxx/Hub.hpp</key>
 		<data>
-		WAN/UHmj0tDtfuiqhLX7irGRlmU=
+		i2GwmXkJaAf8ZK1boAQLVFA9FuQ=
 		</data>
 		<key>Headers/cxx/Myo.hpp</key>
 		<data>
-		JCJi/jKEzDYLNWAEV7ZiPkrfjKc=
+		m/d+iwqIWhomtjLB2KD27pqGM0s=
 		</data>
 		<key>Headers/cxx/Pose.hpp</key>
 		<data>
-		igny/JG53Fw3EZCrmlCcCoR7+ZE=
+		bV/b65asnTpOQVVUseBE2Jks2yY=
 		</data>
 		<key>Headers/cxx/Quaternion.hpp</key>
 		<data>
-		4iVtzhrlVCrG9IcUoPBt1JIjzhI=
+		bvsi/ZwGqVs0ZiHbWPUtsWlsK8k=
 		</data>
 		<key>Headers/cxx/Vector3.hpp</key>
 		<data>
-		EmGxTcYWd3VCTLubL5+FlPuhA1E=
+		OQUYhjK6FE/MwW8eyy24OtbHO4I=
 		</data>
 		<key>Headers/cxx/detail/ThrowOnError.hpp</key>
 		<data>
@@ -49,19 +41,19 @@
 		</data>
 		<key>Headers/cxx/impl/Hub_impl.hpp</key>
 		<data>
-		NfSTdkWwKSggX2s8kEqJEEVSggM=
+		ADOgjoXMsM5/EvZ/12GfysDNcDo=
 		</data>
 		<key>Headers/cxx/impl/Myo_impl.hpp</key>
 		<data>
-		9krwbAh02jlmTOXoq/IPooOnjIc=
+		Lanpt7ZryzSqkRQsFl0FhZXqPo8=
 		</data>
 		<key>Headers/cxx/impl/Pose_impl.hpp</key>
 		<data>
-		YPXYjOH0xPgxD90akCVlo37YqTI=
+		dimtyDcx8DWcpkDi1creWJADmRA=
 		</data>
 		<key>Headers/libmyo.h</key>
 		<data>
-		sWdvs7xcShJ51HwrruNGZr0oxHI=
+		1T6U4X+B1kCNd1gYo7eYWPyLmwI=
 		</data>
 		<key>Headers/libmyo/detail/visibility.h</key>
 		<data>
@@ -69,7 +61,7 @@
 		</data>
 		<key>Headers/myo.hpp</key>
 		<data>
-		fHGsq3BsOXeBVDpb7RgS6WpR2pU=
+		JeFdPeQ4BqtfHJyJxRiXrDHj6xw=
 		</data>
 		<key>Resources/Info.plist</key>
 		<data>

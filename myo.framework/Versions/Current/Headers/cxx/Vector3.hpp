@@ -1,7 +1,6 @@
 // Copyright (C) 2013-2014 Thalmic Labs Inc.
 // Distributed under the Myo SDK license agreement. See LICENSE.txt for details.
-#ifndef MYO_CXX_VECTOR3_HPP
-#define MYO_CXX_VECTOR3_HPP
+#pragma once
 
 #define _USE_MATH_DEFINES
 #include <cmath>
@@ -102,5 +101,3 @@ class Vector3 {
 };
 
 } // namespace myo
-
-#endif // MYO_CXX_VECTOR3_HPP

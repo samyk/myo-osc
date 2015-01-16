@@ -89,6 +89,12 @@ void Hub::removeListener(DeviceListener* listener)
 }
 
 inline
+void Hub::setLockingPolicy(LockingPolicy lockingPolicy)
+{
+    libmyo_set_locking_policy(_hub, static_cast<libmyo_locking_policy_t>(lockingPolicy), ThrowOnError());
+}
+
+inline
 void Hub::onDeviceEvent(libmyo_event_t event)
 {
     libmyo_myo_t opaqueMyo = libmyo_event_get_myo(event);
@@ -134,13 +140,19 @@ void Hub::onDeviceEvent(libmyo_event_t event)
         case libmyo_event_disconnected:
             listener->onDisconnect(myo, time);
             break;
-        case libmyo_event_arm_recognized:
-            listener->onArmRecognized(myo, time,
-                                      static_cast<Arm>(libmyo_event_get_arm(event)),
-                                      static_cast<XDirection>(libmyo_event_get_x_direction(event)));
+        case libmyo_event_arm_synced:
+            listener->onArmSync(myo, time,
+                                static_cast<Arm>(libmyo_event_get_arm(event)),
+                                static_cast<XDirection>(libmyo_event_get_x_direction(event)));
             break;
-        case libmyo_event_arm_lost:
-            listener->onArmLost(myo, time);
+        case libmyo_event_arm_unsynced:
+            listener->onArmUnsync(myo, time);
+            break;
+        case libmyo_event_unlocked:
+            listener->onUnlock(myo, time);
+            break;
+        case libmyo_event_locked:
+            listener->onLock(myo, time);
             break;
         case libmyo_event_orientation:
             listener->onOrientationData(myo, time,
@@ -165,6 +177,18 @@ void Hub::onDeviceEvent(libmyo_event_t event)
         case libmyo_event_rssi:
             listener->onRssi(myo, time, libmyo_event_get_rssi(event));
             break;
+        case libmyo_event_emg: {
+            int8_t emg[] = { libmyo_event_get_emg(event, 0),
+                             libmyo_event_get_emg(event, 1),
+                             libmyo_event_get_emg(event, 2),
+                             libmyo_event_get_emg(event, 3),
+                             libmyo_event_get_emg(event, 4),
+                             libmyo_event_get_emg(event, 5),
+                             libmyo_event_get_emg(event, 6),
+                             libmyo_event_get_emg(event, 7) };
+            listener->onEmgData(myo, time, emg);
+            break;
+        }
         }
     }
 }

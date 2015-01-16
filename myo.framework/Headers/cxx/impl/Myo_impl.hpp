@@ -20,6 +20,30 @@ void Myo::requestRssi() const
 }
 
 inline
+void Myo::unlock(UnlockType type)
+{
+    libmyo_myo_unlock(_myo, static_cast<libmyo_unlock_type_t>(type), ThrowOnError());
+}
+
+inline
+void Myo::lock()
+{
+    libmyo_myo_lock(_myo, ThrowOnError());
+}
+
+inline
+void Myo::notifyUserAction()
+{
+    libmyo_myo_notify_user_action(_myo, libmyo_user_action_single, ThrowOnError());
+}
+
+inline
+void Myo::setStreamEmg(StreamEmgType type)
+{
+    libmyo_set_stream_emg(_myo, static_cast<libmyo_stream_emg_t>(type), ThrowOnError());
+}
+
+inline
 libmyo_myo_t Myo::libmyoObject() const
 {
     return _myo;

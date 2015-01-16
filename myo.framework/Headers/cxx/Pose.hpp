@@ -1,7 +1,6 @@
 // Copyright (C) 2013-2014 Thalmic Labs Inc.
 // Distributed under the Myo SDK license agreement. See LICENSE.txt for details.
-#ifndef MYO_CXX_POSE_HPP
-#define MYO_CXX_POSE_HPP
+#pragma once
 
 #include <iosfwd>
 #include <string>
@@ -20,8 +19,7 @@ public:
         waveIn        = libmyo_pose_wave_in,
         waveOut       = libmyo_pose_wave_out,
         fingersSpread = libmyo_pose_fingers_spread,
-        reserved1     = libmyo_pose_reserved1,
-        thumbToPinky  = libmyo_pose_thumb_to_pinky,
+        doubleTap     = libmyo_pose_double_tap,
         unknown       = libmyo_pose_unknown
     };
 
@@ -70,5 +68,3 @@ std::ostream& operator<<(std::ostream& out, const Pose& pose);
 } // namespace myo
 
 #include "impl/Pose_impl.hpp"
-
-#endif // MYO_CXX_POSE_HPP
