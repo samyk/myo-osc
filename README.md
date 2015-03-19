@@ -31,7 +31,7 @@ You can acquire Myo-OSC from github (redirects to latest branch): <http://samy.p
 ------
 
 ## Usage
-$ ./myo-osc [IP address (default: 127.0.0.1)] <OSC port (eg 7777)>
+$ ./myo-osc [IP address (default: 127.0.0.1)] [OSC port (default: 7777)]
 
 This will output the following OSC data
 
