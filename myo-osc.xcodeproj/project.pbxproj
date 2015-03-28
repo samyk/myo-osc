@@ -255,6 +255,7 @@
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = build;
 			};
 			name = Debug;
 		};
@@ -267,6 +268,7 @@
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = build;
 			};
 			name = Release;
 		};
