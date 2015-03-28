@@ -1,0 +1,4 @@
+build/
+*.xccheckout
+*.xcuserstate
+myo-osc.xcodeproj/xcuserdata/
