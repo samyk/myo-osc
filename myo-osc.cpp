@@ -119,6 +119,16 @@ public:
             myo->vibrate(myo::Myo::vibrationShort);
         }
     }
+  
+  void onEmgData(myo::Myo* myo, uint64_t timestamp, const int8_t* emg) override {
+    osc::OutboundPacketStream p(buffer, OUTPUT_BUFFER_SIZE);
+    p << osc::BeginMessage("/myo/emg")
+      << MAC
+      << emg[0] << emg[1] << emg[2] << emg[3]
+      << emg[4] << emg[5] << emg[6] << emg[7]
+      << osc::EndMessage;
+    transmitSocket->Send(p.Data(), p.Size());
+  }
 
     // onArmRecognized() is called whenever Myo has recognized a setup gesture after someone has put it on their
     // arm. This lets Myo know which arm it's on and which way it's facing.
@@ -246,6 +256,8 @@ int main(int argc, char** argv)
 
     // We've found a Myo.
     std::cout << "Connected to a Myo armband!" << std::endl << std::endl;
+      
+    myo->setStreamEmg(myo::Myo::streamEmgEnabled);
 
     // Next we construct an instance of our DeviceListener, so that we can register it with the Hub.
     DataCollector collector;
@@ -255,7 +267,7 @@ int main(int argc, char** argv)
     hub.addListener(&collector);
 
     // Finally we enter our main loop.
-    while (1) {
+      while (1) {
         // In each iteration of our main loop, we run the Myo event loop for a set number of milliseconds.
         // In this case, we wish to update our display 20 times a second, so we run for 1000/20 milliseconds.
         hub.run(1000/20);
