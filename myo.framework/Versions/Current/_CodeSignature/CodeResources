@@ -13,7 +13,7 @@
 	<dict>
 		<key>Headers/cxx/DeviceListener.hpp</key>
 		<data>
-		ZnBvykur3qMScU+3iybCSoLvcUg=
+		5frQIrDj5Rod49qbH8F/ODv03cg=
 		</data>
 		<key>Headers/cxx/Hub.hpp</key>
 		<data>
@@ -21,7 +21,7 @@
 		</data>
 		<key>Headers/cxx/Myo.hpp</key>
 		<data>
-		m/d+iwqIWhomtjLB2KD27pqGM0s=
+		zkwa8CxGu7CxuY09ncg4cs2C0Ik=
 		</data>
 		<key>Headers/cxx/Pose.hpp</key>
 		<data>
@@ -41,11 +41,11 @@
 		</data>
 		<key>Headers/cxx/impl/Hub_impl.hpp</key>
 		<data>
-		ADOgjoXMsM5/EvZ/12GfysDNcDo=
+		jPk/hrtJnF4CumxpYjsOPpHH8PM=
 		</data>
 		<key>Headers/cxx/impl/Myo_impl.hpp</key>
 		<data>
-		Lanpt7ZryzSqkRQsFl0FhZXqPo8=
+		1IleanLjzRkjPeQaDU5tHCnz3+k=
 		</data>
 		<key>Headers/cxx/impl/Pose_impl.hpp</key>
 		<data>
@@ -53,7 +53,7 @@
 		</data>
 		<key>Headers/libmyo.h</key>
 		<data>
-		1T6U4X+B1kCNd1gYo7eYWPyLmwI=
+		0nJ1nA0iCBjWxuXv2VZ2vRHjXnY=
 		</data>
 		<key>Headers/libmyo/detail/visibility.h</key>
 		<data>
